@@ -1,8 +1,8 @@
 # chat_ui
 
-I didn't write it with back end, the analog data at data.json. 
+I didn't build the back end of this demo, the analog data at data.json. 
 
-project preview:
+preview:
 
 ![image](https://github.com/stuffish/ChatUI/blob/master/preview/preview.gif)
 
