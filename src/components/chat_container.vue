@@ -89,7 +89,7 @@ export default {
                 }, 1000);
               }
             } else {
-              self.loadingTip = 'no more';
+              self.loadingTip = 'bad network';
               set = setTimeout(function () {
                 self.scrollTo(cc, cc.scrollTop + 42, 200, function(){
                   self.loading = false;
