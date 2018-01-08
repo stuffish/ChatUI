@@ -2,7 +2,7 @@
 
 project preview
 
-![]https://github.com/stuffish/ChatUI/blob/master/preview/preview.gif
+![image](https://github.com/stuffish/ChatUI/blob/master/preview/preview.gif)
 
 ## Build Setup
 
