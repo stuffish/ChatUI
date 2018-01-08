@@ -1,6 +1,8 @@
 # chat_ui
 
-project preview
+I didn't write it with back end, the analog data at data.json. 
+
+project preview:
 
 ![image](https://github.com/stuffish/ChatUI/blob/master/preview/preview.gif)
 
@@ -20,7 +22,6 @@ npm run build
 ## Code Organization
 
 ```
-
 ├── build                      
 ├── config           
 ├── preview                      // project preview image
