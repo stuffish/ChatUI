@@ -1,0 +1,416 @@
+{
+  "contacts": [
+   {
+     "contacts_id": 10001,
+     "displayName": "Lancy",
+     "avatar": "avatar1.jpg",
+     "msg": "right",
+     "time": 1515231611
+   },
+   {
+     "contacts_id": 10002,
+     "displayName": "Jack",
+     "avatar": "avatar2.jpg",
+     "msg": "I'll take tonight",
+     "time": 1515224552
+   },
+   {
+     "contacts_id": 10003,
+     "displayName": "Bro",
+     "avatar": "avatar3.jpg",
+     "msg": "Hi!",
+     "time": 1515223263
+   },
+   {
+     "contacts_id": 10004,
+     "displayName": "Carrot",
+     "avatar": "avatar4.jpg",
+     "msg": "Now we are friends, let's chat.",
+     "time": 1515219552
+   },
+   {
+     "contacts_id": 10005,
+     "displayName": "Onion",
+     "avatar": "avatar5.jpg",
+     "msg": "Now we are friends, let's chat.",
+     "time": 1515218641
+   },
+   {
+     "contacts_id": 10006,
+     "displayName": "Pepper",
+     "avatar": "avatar6.jpg",
+     "msg": "Now we are friends, let's chat.",
+     "time": 1515198757
+   },
+   {
+     "contacts_id": 10007,
+     "displayName": "Corn",
+     "avatar": "avatar7.jpg",
+     "msg": "Now we are friends, let's chat.",
+     "time": 1515168000
+   },
+   {
+     "contacts_id": 10008,
+     "displayName": "Corn",
+     "avatar": "avatar7.jpg",
+     "msg": "Now we are friends, let's chat.",
+     "time": 1515168000
+   },
+   {
+     "contacts_id": 10009,
+     "displayName": "Corn",
+     "avatar": "avatar7.jpg",
+     "msg": "Now we are friends, let's chat.",
+     "time": 1515168000
+   },
+   {
+     "contacts_id": 10010,
+     "displayName": "Corn",
+     "avatar": "avatar7.jpg",
+     "msg": "Now we are friends, let's chat.",
+     "time": 1515168000
+   },
+   {
+     "contacts_id": 10011,
+     "displayName": "Corn",
+     "avatar": "avatar7.jpg",
+     "msg": "Now we are friends, let's chat.",
+     "time": 1515168000
+   },
+   {
+     "contacts_id": 10012,
+     "displayName": "Corn",
+     "avatar": "avatar7.jpg",
+     "msg": "Now we are friends, let's chat.",
+     "time": 1515168000
+   }
+ ],
+ "userProfile": [
+   {
+     "accountId": "10001",
+     "nickname": "Peanut",
+     "alias": "Lancy",
+     "avatarImg": "./src/assets/avatar1.jpg",
+     "gender": "Female",
+     "age": "17",
+     "region": "Mars",
+     "tel": "55052",
+     "tag": "Family"
+   },
+   {
+     "accountId": "10002",
+     "nickname": "Potato",
+     "alias": "Jack",
+     "avatarImg": "./src/assets/avatar2.jpg",
+     "gender": "Male",
+     "age": "",
+     "region": "Mars",
+     "tel": "55053",
+     "tag": "Classmate"
+   },
+   {
+     "accountId": "10003",
+     "nickname": "Tomato",
+     "alias": "Bro",
+     "avatarImg": "./src/assets/avatar3.jpg",
+     "gender": "Male",
+     "age": "10",
+     "region": "Mars",
+     "tel": "55053",
+     "tag": "Family"
+   },
+   {
+     "accountId": "10004",
+     "nickname": "Carrot",
+     "alias": "",
+     "avatarImg": "./src/assets/avatar4.jpg",
+     "gender": "Female",
+     "age": "",
+     "region": "Mars",
+     "tel": "55053",
+     "tag": "Family"
+   },
+   {
+     "accountId": "10005",
+     "nickname": "Onion",
+     "alias": "",
+     "avatarImg": "./src/assets/avatar5.jpg",
+     "gender": "Female",
+     "age": "",
+     "region": "Mars",
+     "tel": "55053",
+     "tag": "Classmate"
+   },
+   {
+     "accountId": "10006",
+     "nickname": "Pepper",
+     "alias": "",
+     "avatarImg": "./src/assets/avatar6.jpg",
+     "gender": "Male",
+     "age": "",
+     "region": "Mars",
+     "tel": "55053",
+     "tag": "Colleague"
+   },
+   {
+     "accountId": "10007",
+     "nickname": "Corn",
+     "alias": "",
+     "avatarImg": "./src/assets/avatar7.jpg",
+     "gender": "Female",
+     "age": "",
+     "region": "Mars",
+     "tel": "55053",
+     "tag": "Family"
+   },
+   {
+     "accountId": "10008",
+     "nickname": "Corn",
+     "alias": "",
+     "avatarImg": "./src/assets/avatar8.jpg",
+     "gender": "",
+     "age": "",
+     "region": "Mars",
+     "tel": "55053",
+     "tag": "Family"
+   },
+   {
+     "accountId": "10009",
+     "nickname": "Corn",
+     "alias": "",
+     "avatarImg": "./src/assets/avatar8.jpg",
+     "gender": "",
+     "age": "",
+     "region": "Mars",
+     "tel": "55053",
+     "tag": "Family"
+   }
+ ],
+ "chatData_10001":
+ {
+   "ownerAvatar": "avatar0.jpg",
+   "contactAvatar": "avatar1.jpg",
+   "chatData":[
+     {
+       "direction": 1,
+       "type": "picture",
+       "content": "./src/assets/photo_0.jpg",
+       "time": 1515231466
+     },
+     {
+       "direction": 1,
+       "type": "picture",
+       "content": "./src/assets/photo_1.jpg",
+       "time": 1515231468
+     },
+     {
+       "direction": 0,
+       "type": "text",
+       "content": "looks nice",
+       "time": 1515231592
+     },
+     {
+       "direction": 1,
+       "type": "text",
+       "content": "right",
+       "time": 1515231611
+     }
+    ]
+  },
+  "chatData_10002":
+  {
+    "ownerAvatar": "avatar0.jpg",
+    "contactAvatar": "avatar2.jpg",
+    "chatData":
+    [
+      {
+        "direction": 1,
+        "type": "text",
+        "content": "Your left coat in my house",
+        "time": 1515218080
+      },
+      {
+        "direction": 0,
+        "type": "text",
+        "content": "I'll take tonight",
+        "time": 1515224552
+       }
+    ]
+  },
+  "chatData_10003":
+  {
+    "ownerAvatar": "avatar0.jpg",
+    "contactAvatar": "avatar3.jpg",
+    "chatData":
+    [
+      {
+        "direction": 1,
+        "type": "text",
+        "content": "Now we are friends, let's chat.",
+        "time": 1515222060
+      },
+      {
+        "direction": 0,
+        "type": "text",
+        "content": "Hi!",
+        "time": 1515219552
+       }
+    ]
+  },
+  "chatData_10004":
+  {
+    "ownerAvatar": "avatar0.jpg",
+    "contactAvatar": "avatar4.jpg",
+    "chatData":
+    [
+      {
+        "direction": 1,
+        "type": "text",
+        "content": "Now we are friends, let's chat.",
+        "time": 1515223263
+       }
+    ]
+  },
+  "chatData_10005":
+  {
+    "ownerAvatar": "avatar0.jpg",
+    "contactAvatar": "avatar5.jpg",
+    "chatData":
+    [
+      {
+        "direction": 1,
+        "type": "text",
+        "content": "Now we are friends, let's chat.",
+        "time": 1515218641
+      }
+    ]
+  },
+  "chatData_10006":
+  {
+    "ownerAvatar": "avatar0.jpg",
+    "contactAvatar": "avatar6.jpg",
+    "chatData":
+    [
+      {
+        "direction": 1,
+        "type": "text",
+        "content": "Now we are friends, let's chat.",
+        "time": 1515198757
+      }
+    ]
+  },
+  "chatData_10007":
+  {
+    "ownerAvatar": "avatar0.jpg",
+    "contactAvatar": "avatar7.jpg",
+    "chatData":
+    [
+      {
+        "direction": 1,
+        "type": "text",
+        "content": "Now we are friends, let's chat.",
+        "time": 1515168000
+      }
+    ]
+  },
+  "chatData_10008":
+  {
+    "ownerAvatar": "avatar0.jpg",
+    "contactAvatar": "avatar7.jpg",
+    "chatData":
+    [
+      {
+        "direction": 1,
+        "type": "text",
+        "content": "Now we are friends, let's chat.",
+        "time": 1515168000
+      }
+    ]
+  },
+  "chatData_10009":
+  {
+    "ownerAvatar": "avatar0.jpg",
+    "contactAvatar": "avatar7.jpg",
+    "chatData":
+    [
+      {
+        "direction": 1,
+        "type": "text",
+        "content": "Now we are friends, let's chat.",
+        "time": 1515168000
+      }
+    ]
+  },
+  "chatData_10010":
+  {
+    "ownerAvatar": "avatar0.jpg",
+    "contactAvatar": "avatar7.jpg",
+    "chatData":
+    [
+      {
+        "direction": 1,
+        "type": "text",
+        "content": "Now we are friends, let's chat.",
+        "time": 1515168000
+      }
+    ]
+  },
+  "chatData_10010":
+  {
+    "ownerAvatar": "avatar0.jpg",
+    "contactAvatar": "avatar7.jpg",
+    "chatData":
+    [
+      {
+        "direction": 1,
+        "type": "text",
+        "content": "Now we are friends, let's chat.",
+        "time": 1515168000
+      }
+    ]
+  },
+  "chatData_10011":
+  {
+    "ownerAvatar": "avatar0.jpg",
+    "contactAvatar": "avatar7.jpg",
+    "chatData":
+    [
+      {
+        "direction": 1,
+        "type": "text",
+        "content": "Now we are friends, let's chat.",
+        "time": 1515168000
+      }
+    ]
+  },
+  "chatData_10012":
+  {
+    "ownerAvatar": "avatar0.jpg",
+    "contactAvatar": "avatar7.jpg",
+    "chatData":
+    [
+      {
+        "direction": 1,
+        "type": "text",
+        "content": "Now we are friends, let's chat.",
+        "time": 1515168000
+      }
+    ]
+  },
+  "chatData_10001_more": {
+    "chatDataMore": [
+      {
+      "direction": 0,
+      "type": "text",
+      "content": "May I invite you to dinner together?",
+      "time": 1515231400
+      },
+      {
+        "direction": 1,
+        "type": "text",
+        "content": "I have had",
+        "time": 1515231422
+      }
+    ]
+  }
+}

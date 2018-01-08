@@ -1,0 +1,334 @@
+.theme-default {
+  $colorMain: #4ea9d4;
+  .a-header {
+    background-color: $colorMain;
+    background-size: 100% 100%;
+    background-image:-webkit-linear-gradient(-70deg, #3e8ad9 40%, #73c3bc 95%);
+    background-image:-moz-linear-gradient(-70deg, #3e8ad9 40%, #73c3bc 95%);
+    background-image:-o-linear-gradient(-70deg, #3e8ad9 40%, #73c3bc 95%);
+  }
+  .page-main {
+    .chat-cell {
+      &:active {
+        background-color: #ebeeef;
+      }
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+    .pop {
+      box-shadow: 0 0 7px -3px #445883;
+      .iconfont {
+        color: #43698a;
+        &:active {
+          color: #335675;
+        }
+      }
+      &:active {
+        background-color: #c6dce8;
+      }
+    }
+  }
+  .chat-view .main-container {
+    .content .mag-content {
+      .msg-wrap {
+        background: #fff;
+        color: rgba(#000, .8);
+        &:before {
+          border-right-color: #fff;
+        }
+      }
+      .own .msg-wrap {
+        background: $colorMain;
+        color: rgba(#fff, .8);
+        &:before {
+          border-left-color: $colorMain;
+          border-right-color: transparent;
+        }
+      }
+    }
+    .pre-bottom {
+      input {
+        &:focus {
+          border-color: $colorMain;
+          transition: .3s;
+        }
+      }
+      button {
+        background-color: $colorMain;
+      }
+    }
+  }
+  .overview .top {
+    .avatar {
+      box-shadow: 0 3px 15px -4px #555;
+    }
+    .display-name {
+      color: #fff;
+    }
+  }
+  .a-dialog {
+    .title {
+      background: $colorMain;
+    }
+    .content {
+      input {
+        border-bottom-color: $colorMain;
+      }
+    }
+  }
+}
+.theme-pink {
+  $colorMain: #ea7575;
+  .a-header {
+    background: $colorMain;
+  }
+  .page-main {
+    .chat-cell {
+      .avatar {
+      }
+      &:active {
+        background-color: #f7e0e0;
+      }
+    }
+  }
+  .chat-view .main-container{
+    .chat-container {
+      background: #f3f5f0;
+    }
+    .content .mag-content {
+      .msg-wrap {
+        border: 1px solid #d3d3d3;
+        color: rgba(#000, .8);
+        background: #f9f4bf;
+        &:before {
+          border-right-color: #f9f4bf;
+        }
+        &:after {
+          border-right-color: #d3d3d3;
+        }
+      }
+      .own .msg-wrap {
+        background: $colorMain;
+        color: rgba(#fff, .8);
+        border: 0;
+        &:before {
+          border-left-color: $colorMain;
+          border-right-color: transparent;
+        }
+        &:after {
+          border-right-color: transparent;
+        }
+      }
+    }
+    .pre-bottom {
+      border-top: 1px solid #dcdbdb;
+      input {
+        &:focus {
+          border-color: $colorMain;
+          transition: .3s;
+        }
+      }
+      button {
+        border-radius: 6px;
+        background-color: $colorMain;
+        &.disable {
+          // box-sizing: border-box;
+          // border: 1px solid #fff;
+        }
+      }
+    }
+  }
+  .a-dialog {
+    .title {
+      background: $colorMain;
+    }
+    .content {
+      input {
+        border-bottom-color: $colorMain;
+      }
+    }
+  }
+  .overview {
+    background: #ffeded;
+    .top {
+      .avatar {
+        box-shadow: none;
+      }
+      .title {
+        color: $colorMain;
+      }
+      .display-name {
+        color: #b54141;
+      }
+    }
+  }
+  .theme {
+    .card {
+
+    }
+  }
+}
+.theme-dark {
+  $colorMain: #292929;
+  $colorBackground: #313538;
+  $colorLight: #47484a;
+  $colorBright: rgba(#fff, .6);
+  color: #999;
+  .a-header {
+    background-color: $colorMain;
+    color: #ddd;
+  }
+  .page-main {
+    background: $colorBackground;
+    .chat-cell {
+      .msg, .time {
+        color: #616161;
+      }
+      &:active {
+        background-color: #3a3f45;
+      }
+      &:last-child {
+        border-bottom: 0;
+      }
+      &:nth-child(n+2):before {
+        background: #292c33;
+      }
+    }
+    .pop {
+      box-shadow: 0 0 7px -3px #445883;
+      background: #565b5f;
+      .mask {
+        opacity: 0 !important;
+      }
+      .iconfont {
+        color: rgba($colorBright, .6);
+        &:active {
+          color: rgba($colorBright, .6);
+        }
+      }
+      &:active {
+        background-color: #c6dce8;
+      }
+    }
+  }
+  .chat-view .main-container {
+    .chat-area {
+      background: $colorBackground;
+      .chat-containter .content .msg-content {
+        $colorBubble: #444;
+        .msg-wrap {
+          color: $colorBright;
+          background: $colorBubble;
+          &:before {
+            border-right-color: $colorBubble;
+          }
+          &:after {
+            opacity: 0;
+          }
+        }
+        .own .msg-wrap {
+          &:before {
+            border-left-color: $colorBubble;
+            border-right-color: transparent;
+          }
+        }
+      }
+    }
+    .pre-bottom {
+      background: $colorLight;
+      input {
+        color: $colorMain;
+        border-color: #424242;
+        background: #666;
+        &:focus {
+          background: #999;
+          transition: .3s;
+        }
+      }
+      button {
+        background: #5d5e61;
+        i {
+          color: #b7b7b7;
+        }
+        &.disable {
+          background: #5d5e61;
+        }
+        &:active {
+          background: #76777b;
+          transition: .3s;
+        }
+        &:active:after {
+          opacity: 0;
+        }
+      }
+    }
+
+  }
+  .a-dialog {
+    .title {
+      background: $colorMain;
+      color: #aaa;
+    }
+    .content {
+      background: $colorBackground;
+      input {
+        color: $colorBright;
+        border-bottom-color: rgba(#fff, .15);
+      }
+    }
+    .btns button {
+      background: $colorMain;
+      color: #aaa;
+      & + button {
+        border-left: 1px solid #444;
+      }
+      &:active {
+        background: #666;
+      }
+      &.negative-btn {
+      }
+    }
+  }
+  .overview {
+    background: $colorBackground;
+    .top .title .menus {
+      background: $colorLight;
+      color: $colorBright;
+      li {
+        &:active {
+          background: #3c3c3e;
+        }
+        + li {
+          border-top: 1px solid rgba(#fff, .15);
+        }
+      }
+    }
+    table {
+      background: $colorLight;
+      color: $colorBright;
+      tr:active {
+        background: #3c3c3e;
+      }
+      tr:nth-child(n+2) {
+        border-color: rgba(#fff, .15);
+      }
+    }
+  }
+  .theme {
+    background: $colorBackground;
+    .theme-select .card {
+      background: #292b2d;
+      box-shadow: 0 0 4px -1px #fff;
+    }
+  }
+  .pay {
+    background: $colorBackground;
+    .logo:before {
+      background:#666;
+    }
+    .logo:after {
+      background:#666;
+    }
+  }
+}
