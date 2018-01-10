@@ -332,3 +332,63 @@
     }
   }
 }
+.theme-gold {
+  $colorBlack: #444;
+  $colorGold: #f1cb26;
+  .a-header {
+    background-color: $colorBlack;
+    color: $colorGold;
+  }
+  .page-main .pop {
+    background: $colorBlack;
+    box-shadow: 0 0 0px 1px $colorBlack;
+    .iconfont {
+      color: $colorGold;
+    }
+  }
+  .chat-containter .content .msg-content {
+    .msg-wrap {
+      border: 1px solid $colorBlack;
+      &:after {
+        border-right-color:$colorBlack;
+      }
+    }
+    .own .msg-wrap {
+      background: $colorBlack;
+      color: $colorGold;
+      &:before {
+        border-left-color: $colorBlack;
+      }
+      &:after {
+        border-left-color:$colorBlack;
+      }
+    }
+  }
+  .chat-view .main-container .pre-bottom {
+    input:focus {
+      border-color: $colorBlack;
+    }
+    button {
+      background-color: $colorBlack;
+      color: #fff;
+      &:hover i {
+        color: $colorGold;
+      }
+      &.disable:hover i {
+        color: #fff;
+      }
+    }
+  }
+  .overview .top > *{
+    color: $colorGold !important;
+  }
+  .a-dialog .title {
+    background: $colorBlack;
+    color: $colorGold;
+  }
+  .theme {
+    .theme-select .card {
+      // box-shadow: 0 0 5px -1px $colorGold;
+    }
+  }
+}

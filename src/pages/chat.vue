@@ -184,6 +184,9 @@ export default {
         border: 1px solid #ddd;
         float: left;
         margin-right: 2.5%;
+        &:hover {
+          transition: .3s;
+        }
       }
       button {
         position: relative;

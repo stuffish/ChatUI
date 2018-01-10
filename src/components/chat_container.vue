@@ -198,7 +198,7 @@ export default {
         &:after {
           content: "";
           position: absolute;
-          top: 12px;
+          top: 11px;
           right: 100%;
           border: 6px solid transparent;
           border-right-color: #fff;
