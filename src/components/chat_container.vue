@@ -66,33 +66,32 @@ export default {
     dragEnd(e) {
       let cc = document.getElementsByClassName('chat-containter')[0];
       let offset = document.getElementsByClassName('loading')[0].offsetHeight;
-      let self = this;
       let set;
       if (cc.scrollTop <= 20) {
-        if (self.loading) {
+        if (this.loading) {
           return;
         }
-        self.loading = true;
-        self.scrollTo(cc, 0, 200, function(){
-          self.$emit('load-more', (success, topData) => {
+        this.loading = true;
+        this.scrollTo(cc, 0, 200, function(){
+          this.$emit('load-more', (success, topData) => {
             if (success) {
-              self.chatData = topData.reverse().concat(self.chatData);
+              this.chatData = topData.reverse().concat(this.chatData);
               if (topData.length > 0) {
                 cc.scrollTop = offset;
-                self.loading = false;
+                this.loading = false;
               } else {
-                self.loadingTip = 'no more';
-                set = setTimeout(function () {
-                  self.scrollTo(cc, cc.scrollTop + 42, 150, function(){
-                    self.loading = false;
+                this.loadingTip = 'no more';
+                set = setTimeout(() => {
+                  this.scrollTo(cc, cc.scrollTop + 42, 150, function(){
+                    this.loading = false;
                   });
                 }, 1000);
               }
             } else {
-              self.loadingTip = 'bad network';
-              set = setTimeout(function () {
-                self.scrollTo(cc, cc.scrollTop + 42, 200, function(){
-                  self.loading = false;
+              this.loadingTip = 'bad network';
+              set = setTimeout(() => {
+                this.scrollTo(cc, cc.scrollTop + 42, 200, function(){
+                  this.loading = false;
                 });
               }, 1500);
             }

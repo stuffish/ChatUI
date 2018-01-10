@@ -115,8 +115,7 @@ export default {
       self.isLaoding = false;
     },
     send() {
-      let msg,
-        self = this;
+      let msg;
       if (this.preSend != '') {
         msg = {
           direction: 0,
@@ -127,7 +126,7 @@ export default {
         };
         this.$bus.emit('new-chat-data', msg);
         this.preSend = '';
-        setTimeout(function () {
+        setTimeout(() => {
           msg = {
             direction: 1,
             type: 'text',
@@ -135,7 +134,7 @@ export default {
             content: '[Auto Reply]',
             time: (new Date).getTime()
           };
-          self.$bus.emit('new-chat-data', msg);
+          this.$bus.emit('new-chat-data', msg);
         }, 800);
       }
     },
