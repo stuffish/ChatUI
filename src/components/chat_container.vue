@@ -23,7 +23,6 @@
 </template>
 
 <script>
-import slide from '@/scripts/slide.js'
 export default {
   props: {
     contactAvatar: {
