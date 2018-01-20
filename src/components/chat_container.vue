@@ -49,7 +49,7 @@ export default {
   mounted() {
     let self = this;
     let cc = document.getElementsByClassName('chat-containter')[0];
-    this.$nextTick(function() {
+    this.$nextTick(() => {
       cc.scrollTop = cc.scrollHeight - cc.clientHeight;
     })
   },
@@ -57,7 +57,7 @@ export default {
     addChatData(val) {
       let self = this;
       this.chatData.push(val);
-      this.$nextTick(function() {
+      this.$nextTick(() => {
         let cc = document.getElementsByClassName('chat-containter')[0];
         self.scrollTo(cc, cc.scrollHeight - cc.clientHeight, 180, ()=>{});
       })
@@ -71,7 +71,7 @@ export default {
           return;
         }
         this.loading = true;
-        this.scrollTo(cc, 0, 200, function(){
+        this.scrollTo(cc, 0, 200, () => {
           this.$emit('load-more', (success, topData) => {
             if (success) {
               this.chatData = topData.reverse().concat(this.chatData);
@@ -81,7 +81,7 @@ export default {
               } else {
                 this.loadingTip = 'no more';
                 set = setTimeout(() => {
-                  this.scrollTo(cc, cc.scrollTop + 42, 150, function(){
+                  this.scrollTo(cc, cc.scrollTop + 42, 150, () => {
                     this.loading = false;
                   });
                 }, 1000);
@@ -89,7 +89,7 @@ export default {
             } else {
               this.loadingTip = 'bad network';
               set = setTimeout(() => {
-                this.scrollTo(cc, cc.scrollTop + 42, 200, function(){
+                this.scrollTo(cc, cc.scrollTop + 42, 200, () => {
                   this.loading = false;
                 });
               }, 1500);
@@ -97,7 +97,7 @@ export default {
           });
         });
       } else if(cc.scrollTop > 20 && cc.scrollTop <= 50) {
-        self.scrollTo(cc, 42, 150, function(){
+        self.scrollTo(cc, 42, 150, () => {
           self.loading = false;
         });
       } else {
@@ -109,7 +109,7 @@ export default {
       let startHeight = el.scrollTop;
       let partHeight = (endHeight - startHeight) / (time / 20.0);
       if(endHeight < startHeight) {
-        let set = setInterval(function() {
+        let set = setInterval(() => {
           el.scrollTop += partHeight;
           if (endHeight >= el.scrollTop) {
             clearInterval(set);
@@ -117,7 +117,7 @@ export default {
           }
         }, 20);
       } else {
-        let set = setInterval(function() {
+        let set = setInterval(() => {
           el.scrollTop += partHeight;
           if (endHeight <= el.scrollTop) {
             clearInterval(set);
