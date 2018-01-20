@@ -1,7 +1,7 @@
 <template>
   <div class="theme">
-    <a-header title="themes">
-    </a-header>
+    <chat-header title="themes">
+    </chat-header>
     <div class="content">
 
       <ul class="theme-select">
@@ -20,13 +20,13 @@
           </transition>
         </li>
       </ul>
-      <a-dialog :show.sync="dialogShow" title="remind" :type="0" content="This theme just be applied for VIP, click [Confirm] and upgrade your account to VIP." @positiveBtnClick="dialogPositive"></a-dialog>
+      <chat-dialog :show.sync="dialogShow" title="remind" :type="0" content="This theme just be applied for VIP, click [Confirm] and upgrade your account to VIP." @positiveBtnClick="dialogPositive"></chat-dialog>
     </div>
   </div>
 </template>
 <script>
-import AHeader from '@/components/a_header.vue';
-import ADialog from '@/components/a_dialog.vue';
+import ChatHeader from '@/components/chat_header.vue';
+import ChatDialog from '@/components/chat_dialog.vue';
 export default {
   name: "",
   data: () => ({
@@ -57,7 +57,7 @@ export default {
     }
   },
   components: {
-    AHeader, ADialog
+    ChatHeader, ChatDialog
   }
 }
 </script>

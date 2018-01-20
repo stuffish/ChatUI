@@ -1,6 +1,6 @@
 <template>
   <div class="pay">
-    <a-header title="Pay"></a-header>
+    <chat-header title="Pay"></chat-header>
     <div class="logo"></div>
     <img class="qr" src="../assets/qr.jpg" alt="">
     <div class="txt">
@@ -10,14 +10,14 @@
   </div>
 </template>
 <script>
-import AHeader from '@/components/a_header.vue';
+import ChatHeader from '@/components/chat_header.vue';
 export default {
   name: "",
   data: () => ({
 
   }),
   components: {
-    AHeader
+    ChatHeader
   }
 }
 </script>
@@ -25,7 +25,7 @@ export default {
 .pay {
   background: #ddd;
   color: #666;
-  > *:not(.a-header) {
+  > *:not(.chat-header) {
     text-align: center;
   }
   .logo {

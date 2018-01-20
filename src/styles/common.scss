@@ -1,6 +1,6 @@
 .theme-default {
   $colorMain: #4ea9d4;
-  .a-header {
+  .chat-header {
     background-color: $colorMain;
     background-size: 100% 100%;
     background-image:-webkit-linear-gradient(-70deg, #3e8ad9 40%, #73c3bc 95%);
@@ -67,7 +67,7 @@
       color: #fff;
     }
   }
-  .a-dialog {
+  .chat-dialog {
     .title {
       background: $colorMain;
     }
@@ -80,7 +80,7 @@
 }
 .theme-pink {
   $colorMain: #ea7575;
-  .a-header {
+  .chat-header {
     background: $colorMain;
   }
   .page-main {
@@ -139,7 +139,7 @@
       }
     }
   }
-  .a-dialog {
+  .chat-dialog {
     .title {
       background: $colorMain;
     }
@@ -175,7 +175,7 @@
   $colorLight: #47484a;
   $colorBright: rgba(#fff, .6);
   color: #999;
-  .a-header {
+  .chat-header {
     background-color: $colorMain;
     color: #ddd;
   }
@@ -265,7 +265,7 @@
     }
 
   }
-  .a-dialog {
+  .chat-dialog {
     .title {
       background: $colorMain;
       color: #aaa;
@@ -335,7 +335,7 @@
 .theme-gold {
   $colorBlack: #444;
   $colorGold: #f1cb26;
-  .a-header {
+  .chat-header {
     background-color: $colorBlack;
     color: $colorGold;
   }
@@ -382,7 +382,7 @@
   .overview .top > *{
     color: $colorGold !important;
   }
-  .a-dialog .title {
+  .chat-dialog .title {
     background: $colorBlack;
     color: $colorGold;
   }

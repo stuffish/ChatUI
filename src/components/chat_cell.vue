@@ -1,6 +1,5 @@
 <template>
-  <router-link class="chat-cell" :to="{ name: routerName, query: routerParams}">
-    <!-- <img class="avatar" :src="avatar" alt=""> -->
+  <div class="chat-cell" @click="click">
     <div class="avatar" :style="{backgroundImage:'url('+avatar+')'}">
     </div>
     <div class="content">
@@ -15,8 +14,7 @@
       {{time}}
     </div>
     <slot></slot>
-
-  </router-link>
+  </div>
 </template>
 <script>
 export default {
@@ -46,7 +44,12 @@ export default {
   },
   data: () => ({
 
-  })
+  }),
+  methods: {
+    click() {
+      this.$emit('click');
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

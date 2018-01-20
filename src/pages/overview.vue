@@ -65,11 +65,11 @@
         <td>{{info.tag}}</td>
       </tr>
     </table>
-    <a-dialog :show.sync="dialogShow" title="Input the new alias" :type="1" :content="info.alias" @positiveBtnClick="dialogPositive"></a-dialog>
+    <chat-dialog :show.sync="dialogShow" title="Input the new alias" :type="1" :content="info.alias" @positiveBtnClick="dialogPositive"></chat-dialog>
   </div>
 </template>
 <script>
-import ADialog from '@/components/a_dialog.vue';
+import ChatDialog from '@/components/chat_dialog.vue';
 import default_bg from '@/assets/bg0.jpg';
 import pink_bg from '@/assets/bg1.jpg';
 import dark_bg from '@/assets/bg2.jpg';
@@ -113,7 +113,7 @@ export default {
     }
   },
   components: {
-    ADialog
+    ChatDialog
   }
 }
 </script>

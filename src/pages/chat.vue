@@ -1,7 +1,7 @@
 <template>
   <div class="chat-view">
-    <a-header :title="displayName">
-    </a-header>
+    <chat-header :title="displayName">
+    </chat-header>
     <div class="main-container">
       <div class="chat-area">
         <chat-container
@@ -26,7 +26,7 @@
 
 <script>
 import Vue from 'vue'
-import AHeader from '@/components/a_header.vue'
+import ChatHeader from '@/components/chat_header.vue'
 import ChatContainer from '@/components/chat_container.vue'
 import 'vue-resource'
 export default {
@@ -146,7 +146,7 @@ export default {
     }
   },
   components: {
-    AHeader,
+    ChatHeader,
     ChatContainer
   }
 }
@@ -155,6 +155,7 @@ export default {
 .chat-view {
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
   .main-container {
     display: flex;
     height: calc(100vh - 48px);

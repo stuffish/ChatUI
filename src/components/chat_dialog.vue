@@ -1,7 +1,7 @@
 <template>
   <transition name="up-appear">
     <div  v-if="show" class="dialog-wrap">
-      <div class="a-dialog">
+      <div class="chat-dialog">
         <div class="title">
           {{title}}
         </div>
@@ -84,7 +84,7 @@ export default {
   align-items: center;
   justify-content: center;
 }
-.a-dialog {
+.chat-dialog {
   $colorBorder: #ddd;
   width: 210px;
   background: #fff;
@@ -140,10 +140,4 @@ export default {
     }
   }
 }
-// @media (max-width:320px) {
-//   .a-dialog {
-//     width: 170px;
-//     margin-left: -85px;
-//   }
-// }
 </style>

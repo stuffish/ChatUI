@@ -1,5 +1,5 @@
 <template>
-  <div class="a-header">
+  <div class="chat-header" :class="{'fixed': fixed}" :style="{height: height + 'px'}">
     <div class="left">
       <div v-if="back" class="" @click="goBack">
         <i class="iconfont icon-fanhui"></i>
@@ -17,6 +17,14 @@
 export default {
   name: "",
   props: {
+    fixed: {
+      type: Boolean,
+      default: false
+    },
+    height: {
+      type: Number,
+      default: 48
+    },
     back: {
       type: Boolean,
       default: true
@@ -37,10 +45,9 @@ export default {
 }
 </script>
 <style lang="scss">
-.a-header {
+.chat-header {
   display: table;
   width: 100vw;
-  height: 48px;
   color: #fff;
   transition: .3s;
   > * {
@@ -59,6 +66,17 @@ export default {
   }
   .option {
     width: 20%;
+  }
+  &.fixed {
+    position: fixed;
+    z-index: 500;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    height: 90px;
+    width: 100vw;
+    background: #fff;
   }
 }
 </style>
