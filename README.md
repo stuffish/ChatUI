@@ -67,7 +67,7 @@ npm run build
 >| :------------ | :------------ | :------------ |
 >| on-avatar-click | Triggered when a avatar is clicked. | Which avatar was clicked (0: own, 1: other). |
 >| load-more | Drag to top and get more data. | A function callback contains success status and data. |
->| on-msg-send | Triggered when the message to be sent is ready and the sending button is clicked, the event triggered. | The message of sending. |
+>| on-msg-send | Triggered when the message to be sent is ready and the sending button is clicked. | The message of sending. |
 >
 >When you received a new message, use `this.$bus.emit('new-chat-data', message)`with `vue-bus` on parent to provide the new message to this component.
 
