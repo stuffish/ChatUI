@@ -1,4 +1,4 @@
-# chat_ui
+# ChatUI
 
 ![image](https://github.com/stuffish/ChatUI/blob/master/preview/preview.gif)
 
@@ -52,7 +52,7 @@ npm run build
 ```
 
 ## Components
-### chat-area
+### ChatArea
 
 >Provide the conversation view and the message sender of each chatting.
 >### Menu props
@@ -71,7 +71,7 @@ npm run build
 >
 >When you received a new message, use `this.$bus.emit('new-chat-data', message)`with `vue-bus` on parent to provide the new message to this component.
 
-## chat-cell
+## ChatCell
 
 > A cell include contact avatar, nickname, last massage and time.
 >### Menu props
@@ -83,7 +83,7 @@ npm run build
 >| time | The sent time of last message. | String | '' |
 >| circle-avatar | Display the avatar in circle or not | Boolean | false |
 
-## chat-group
+## ChatGroup
 > The contacts list container, each info including other's avatar, the last message of the chat, the last time. Consists of the `chat-cell` component.
 >### Menu props
 >| props  | Introductions | type | default |
@@ -94,7 +94,7 @@ npm run build
 >| :------------ | :------------ | :------------ |
 >| click | A item is clicked. | click index, content. |
 
-## chat-dialog
+## ChatDialog
 > Pop a dialog in custom.
 >### Menu props
 >| props  | Introductions | type | default |
@@ -111,7 +111,7 @@ npm run build
 >| positive-btn-click | When the positive button is pressed. | content |
 >| negative-btn-click | When the nagative button is pressed. | - |
 
-## chat-header
+## ChatHeader
 >The top header.
 >### Menu props
 >| props  | Introductions | type | default |
