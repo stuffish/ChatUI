@@ -60,7 +60,7 @@ npm run build
 >| click | A item is clicked. | click index, content. |
 
 ## chat-dialog
-> Alert a dialog in custom.
+> Pop a dialog in custom.
 >### Menu props
 >| props  | Introductions | type | default |
 >| :------------ | :------------ | :------------ | :------------ |
@@ -95,17 +95,17 @@ npm run build
 ├── src                          // the source files
 │   ├── assets                   // static image resource
 │   ├── components        
-│   │   ├── chat_area.vue   
-│   │   ├── chat_cell.vue   
-│   │   ├── chat_dialog.vue        
-│   │   ├── chat_group.vue  
-│   │   ├── chat_header.vue          
+│   │   ├── chat_area.vue        // provide chatting view
+│   │   ├── chat_cell.vue        // a cell include contact simple data
+│   │   ├── chat_dialog.vue      // pop dialog
+│   │   ├── chat_group.vue       // chat-cell group
+│   │   ├── chat_header.vue      // top header
 │   ├── pages 
-│   │   ├── chat.vue             // view of chat each other
+│   │   ├── chat.vue             // chat each other view
 │   │   ├── index.vue            // contact list
 │   │   ├── overview.vue         // contact profile view
 │   │   ├── page_transition.vue  // page transition animate
-│   │   ├── pay.vue              // pay for value-added services
+│   │   ├── pay.vue              // pay for VIP
 │   │   └── theme.vue            // change theme
 │   ├── router
 │   │   └── index.js             // vue router setting
