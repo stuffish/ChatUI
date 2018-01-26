@@ -23,7 +23,7 @@ export default {
     },
     height: {
       type: Number,
-      default: 48
+      default: 50
     },
     back: {
       type: Boolean,

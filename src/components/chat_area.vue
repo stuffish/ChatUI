@@ -34,7 +34,7 @@
     props: {
       height: {
         type: Number,
-        required: true
+        default: 300
       },
       contactAvatar: {
         type: String
@@ -163,10 +163,8 @@
           }, 20);
         }
       },
-      avatarClick(a) {
-        if(a)
-          this.$emit('on-avatar-click');
-        else return;
+      avatarClick(direction) {
+        this.$emit('on-avatar-click', direction);
       }
     }
   }

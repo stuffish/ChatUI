@@ -65,7 +65,7 @@
         <td>{{info.tag}}</td>
       </tr>
     </table>
-    <chat-dialog :show.sync="dialogShow" title="Input the new alias" :type="1" :content="info.alias" @positiveBtnClick="dialogPositive"></chat-dialog>
+    <chat-dialog :show.sync="dialogShow" title="Input the new alias" :type="1" :content="info.alias" @positive-btn-click="dialogPositive"></chat-dialog>
   </div>
 </template>
 <script>

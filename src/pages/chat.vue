@@ -105,8 +105,10 @@ export default {
     goback () {
       this.$router.goBack()
     },
-    onAvatarClick() {
-      this.$router.push({name: 'Overview', query: {id : this.contactId}});
+    onAvatarClick(direction) {
+      if (direction == 1) {
+        this.$router.push({name: 'Overview', query: {id : this.contactId}});
+      }
     },
     onMsgSend() {
       setTimeout(() => {

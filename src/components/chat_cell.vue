@@ -1,6 +1,6 @@
 <template>
   <div class="chat-cell" @click="click">
-    <div class="avatar" :style="{backgroundImage:'url('+avatar+')'}">
+    <div class="avatar" :style="{backgroundImage:'url('+avatar+')'}" :class="{circle: circleAvatar}">
     </div>
     <div class="content">
       <div class="nickname">
@@ -86,6 +86,9 @@ export default {
     width: 96%;
     height: 1px;
     background: #ddd;
+  }
+  .circle {
+    border-radius: 50%;
   }
   + .chat-cell {
   }

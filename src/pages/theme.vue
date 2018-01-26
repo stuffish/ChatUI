@@ -20,7 +20,7 @@
           </transition>
         </li>
       </ul>
-      <chat-dialog :show.sync="dialogShow" title="remind" :type="0" content="This theme just be applied for VIP, click [Confirm] and upgrade your account to VIP." @positiveBtnClick="dialogPositive"></chat-dialog>
+      <chat-dialog :show.sync="dialogShow" title="remind" :type="0" content="This theme just be applied for VIP, click [Confirm] and upgrade your account to VIP." @positive-btn-click="dialogPositive"></chat-dialog>
     </div>
   </div>
 </template>

@@ -55,10 +55,10 @@ export default {
   },
   methods: {
     positiveBtnClick() {
-      this.$emit('positiveBtnClick', this.dialogContent);
+      this.$emit('positive-btn-click', this.dialogContent);
     },
     negativeBtnClick() {
-      this.$emit('negativeBtnClick');
+      this.$emit('negative-btn-click');
       this.$emit('update:show', false);
     }
   },
