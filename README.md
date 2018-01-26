@@ -54,7 +54,7 @@ npm run build
 >| props  | Introductions | type | default |
 >| :------------ | :------------ | :------------ | :------------ |
 >| data | Contacts list data. | Array| [] | 
->#### Menu events
+>### Menu events
 >| events | Introductions | return |
 >| :------------ | :------------ | :------------ |
 >| click | A item is clicked. | click index, content. |
@@ -70,7 +70,7 @@ npm run build
 >| content | Dialog content | String | '' |
 >| positive-btn | Display text on positive button | String | 'Confirm'|
 >| negative-btn | Display text on negative button | String | 'Cancel'|
->#### Menu events
+>### Menu events
 >| events | Introductions | return |
 >| :------------ | :------------ | :------------ |
 >| positive-btn-click | When the positive button is pressed. | content |
