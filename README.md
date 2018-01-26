@@ -90,7 +90,7 @@ npm run dev
 >### Menu events
 >| events | Introductions | return |
 >| :------------ | :------------ | :------------ |
->| click | A item is clicked. | click index, content. |
+>| on-cell-click | A item is clicked. | click index, content. |
 
 ## ChatDialog
 > Pop a dialog in custom.
