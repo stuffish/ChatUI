@@ -31,10 +31,6 @@ export default {
     },
     title: {
       type: String
-    },
-    bgColor: {
-      type: String,
-      default: '#fff'
     }
   },
   methods: {

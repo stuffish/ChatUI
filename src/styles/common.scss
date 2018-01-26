@@ -29,8 +29,9 @@
       }
     }
   }
-  .chat-view .main-container {
-    .content .mag-content {
+  .page-chat {
+    background: $colorMain;
+    .content .msg-content {
       .msg-wrap {
         background: #fff;
         color: rgba(#000, .8);
@@ -92,15 +93,14 @@
       }
     }
   }
-  .chat-view .main-container{
-    .chat-container {
-      background: #f3f5f0;
-    }
-    .content .mag-content {
+  .page-chat {
+    background: #f3f5f0;
+    .scroller .content .msg-content {
       .msg-wrap {
         border: 1px solid #d3d3d3;
         color: rgba(#000, .8);
         background: #f9f4bf;
+        box-shadow: none;
         &:before {
           border-right-color: #f9f4bf;
         }
@@ -212,10 +212,10 @@
       }
     }
   }
-  .chat-view .main-container {
+  .page-chat {
     .chat-area {
       background: $colorBackground;
-      .chat-containter .content .msg-content {
+      .content .msg-content {
         $colorBubble: #444;
         .msg-wrap {
           color: $colorBright;
@@ -346,7 +346,7 @@
       color: $colorGold;
     }
   }
-  .chat-containter .content .msg-content {
+   .content .msg-content {
     .msg-wrap {
       border: 1px solid $colorBlack;
       &:after {
@@ -364,7 +364,7 @@
       }
     }
   }
-  .chat-view .main-container .pre-bottom {
+  .page-chat .pre-bottom {
     input:focus {
       border-color: $colorBlack;
     }

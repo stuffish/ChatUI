@@ -32,14 +32,9 @@ export default {
     time: {
       type: String
     },
-    link: {
-      type: String
-    },
-    routerName: {
-      type: String
-    },
-    routerParams: {
-      type: Object
+    circleAvatar: {
+      type: Boolean,
+      default: false
     }
   },
   data: () => ({

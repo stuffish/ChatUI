@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import PageTransition from '@/components/page_transition.vue'
+import PageTransition from '@/pages/page_transition.vue'
 import Index from '@/pages/index.vue'
 import Chat from '@/pages/chat.vue'
 import Overview from '@/pages/overview.vue'

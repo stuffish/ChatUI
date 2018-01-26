@@ -5,7 +5,7 @@
     <img class="qr" src="../assets/qr.jpg" alt="">
     <div class="txt">
       Scan the QR code with AliPay and transfer<br>
-      VIP account will unlock automatically
+      VIP will unlock automatically
     </div>
   </div>
 </template>
