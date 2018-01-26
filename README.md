@@ -11,8 +11,6 @@ npm install
 # serve with hot reload at localhost:8080
 npm run dev
 
-# build for production with minification
-npm run build
 ```
 
 # Code Organization
@@ -119,4 +117,4 @@ npm run build
 >| height | The height occupied by the header. | Number | 50 |
 >| back | Display the back option. | Boolean | true |
 >| title | The content of the header. | String | '' |
->| fixed | The position of the header use fixed. | Boolean | false |
+>| fixed | The position of the header use fixed or not. | Boolean | false |

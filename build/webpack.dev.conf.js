@@ -13,8 +13,8 @@ const PORT = process.env.PORT && Number(process.env.PORT)
 
 const express = require('express');
 const app = express();
-let appData = require('../data.json');
-let apiRoutes = express.Router();
+const appData = require('../api/data.json');
+const apiRoutes = express.Router();
 app.use('/api', apiRoutes);
 
 const devWebpackConfig = merge(baseWebpackConfig, {
