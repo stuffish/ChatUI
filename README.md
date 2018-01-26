@@ -1,7 +1,5 @@
 # chat_ui
 
-preview:
-
 ![image](https://github.com/stuffish/ChatUI/blob/master/preview/preview.gif)
 
 ## Build Setup
@@ -16,10 +14,47 @@ npm run dev
 # build for production with minification
 npm run build
 ```
+
+## Code Organization
+```
+├── build                      
+├── config           
+├── preview                      // project preview image
+├── src                          // the source files
+│   ├── assets                   // static image resource
+│   ├── components        
+│   │   ├── chat_area.vue        // provide chatting view
+│   │   ├── chat_cell.vue        // a cell include contact simple data
+│   │   ├── chat_dialog.vue      // pop dialog
+│   │   ├── chat_group.vue       // chat-cell group
+│   │   ├── chat_header.vue      // top header
+│   ├── pages 
+│   │   ├── chat.vue             // chat-each-other view
+│   │   ├── index.vue            // contact list
+│   │   ├── overview.vue         // contact profile view
+│   │   ├── page_transition.vue  // page transition animate
+│   │   ├── pay.vue              // pay for VIP
+│   │   └── theme.vue            // change theme
+│   ├── router
+│   │   └── index.js             // vue router setting
+│   ├── scripts                  // scripts resource
+│   ├── styles                   // css resource
+│   ├── App.vue                  // page entry file
+│   └── main.js                  // program entry file, load components
+├── .babelrc
+├── .gitigore
+├── data.json                    // analog data of back end
+├── index.html                   // entry html
+├── LICENSE
+├── package-lock.json
+├── package.json
+└── README.md
+```
+
 ## Components
 ### chat-area
 
->Provide chatting view and the message sender of each chatting.
+>Provide the conversation view and the message sender of each chatting.
 >### Menu props
 >| props  | Introductions | type | default |
 >| :------------ | :------------ | :------------ | :------------ |
@@ -85,39 +120,3 @@ npm run build
 >| back | Display the back option. | Boolean | true |
 >| title | The content of the header. | String | '' |
 >| fixed | The position of the header use fixed. | Boolean | false |
-
-
-## Code Organization
-```
-├── build                      
-├── config           
-├── preview                      // project preview image
-├── src                          // the source files
-│   ├── assets                   // static image resource
-│   ├── components        
-│   │   ├── chat_area.vue        // provide chatting view
-│   │   ├── chat_cell.vue        // a cell include contact simple data
-│   │   ├── chat_dialog.vue      // pop dialog
-│   │   ├── chat_group.vue       // chat-cell group
-│   │   ├── chat_header.vue      // top header
-│   ├── pages 
-│   │   ├── chat.vue             // chat each other view
-│   │   ├── index.vue            // contact list
-│   │   ├── overview.vue         // contact profile view
-│   │   ├── page_transition.vue  // page transition animate
-│   │   ├── pay.vue              // pay for VIP
-│   │   └── theme.vue            // change theme
-│   ├── router
-│   │   └── index.js             // vue router setting
-│   ├── scripts                  // scripts resource
-│   ├── styles                   // css resource
-│   ├── App.vue                  // page entry file
-│   └── main.js                  // program entry file, load components
-├── .babelrc
-├── .gitigore
-├── data.json                    // analog data of back end
-├── index.html                   // entry html
-├── LICENSE
-├── package-lock.json
-├── package.json
-└── README.md
