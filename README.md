@@ -11,8 +11,6 @@ npm install
 # serve with hot reload at localhost:8080
 npm run dev
 
-# build for production with minification
-npm run build
 ```
 
 # Code Organization
@@ -81,7 +79,7 @@ npm run build
 >| nickname | Nickname or display name. | String | '' |
 >| msg | The last message. | String | '' |
 >| time | The sent time of last message. | String | '' |
->| circle-avatar | Display the avatar in circle or not | Boolean | false |
+>| circle-avatar | Display the avatar in circle or not. | Boolean | false |
 
 ## ChatGroup
 > The contacts list container, each info including other's avatar, the last message of the chat, the last time. Consists of the `chat-cell` component.
@@ -102,9 +100,9 @@ npm run build
 >| type | Dialog type (text dialog or input dialog). | Number | 0 |
 >| show | Dialog display. | Boolean | false |
 >| title | Dialog title. | String | false |
->| content | Dialog content | String | '' |
->| positive-btn | Display text on positive button | String | 'Confirm'|
->| negative-btn | Display text on negative button | String | 'Cancel'|
+>| content | Dialog content. | String | '' |
+>| positive-btn | Display text on positive button. | String | 'Confirm'|
+>| negative-btn | Display text on negative button. | String | 'Cancel'|
 >### Menu events
 >| events | Introductions | return |
 >| :------------ | :------------ | :------------ |
