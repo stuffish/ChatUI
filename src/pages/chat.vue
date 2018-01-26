@@ -2,18 +2,18 @@
   <div class="page-chat">
     <chat-header :title="displayName">
     </chat-header>
-        <chat-area
-        v-if="asyncFlag"
-        :height="mHeight"
-        :oriData="chatData"
-        :ownerAvatar="ownerAvatar"
-        :contactAvatar="contactAvatar"
-        @on-avatar-click="onAvatarClick"
-        @load-more="loadMore"
-        @on-msg-send="onMsgSend"
-        >
-      </chat-area>
-    
+      <chat-area
+      v-if="asyncFlag"
+      :height="mHeight"
+      :oriData="chatData"
+      :ownerAvatar="ownerAvatar"
+      :contactAvatar="contactAvatar"
+      @on-avatar-click="onAvatarClick"
+      @load-more="loadMore"
+      @on-msg-send="onMsgSend"
+      >
+    </chat-area>
+    <div v-else class="loading-view"></div>
   </div>
 </div>
 </template>
@@ -134,5 +134,9 @@ export default {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  .loading-view {
+    width: 100vw;
+    height: calc(100vh - 48px);
+  }
 }
 </style>

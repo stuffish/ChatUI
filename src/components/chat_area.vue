@@ -1,7 +1,7 @@
 <template>
   <div class="chat-area" :style="{height: height + 'px'}">
       <div class="scroller" ref="scroller">
-        <div class="content" @touchend="dragEnd($event)">
+        <div class="content" @touchstart="dragStart($event)" @touchend="dragEnd($event)">
           <div class="loading" ref="loading">
             {{loadingTip}}
           </div>
@@ -84,6 +84,9 @@
           this.scrollTo(sc, sc.scrollHeight - sc.clientHeight, 180, ()=>{});
         })
       },
+      dragStart(e) {
+        clearTimeout(this.t);
+      },
       dragEnd(e) {
         let sc = this.$refs.scroller;
         let offset = this.$refs.loading.offsetHeight;
@@ -101,9 +104,6 @@
                   this.loading = false;
                 } else {
                   this.loadingTip = 'no more';
-                  if (this.t) {
-                    clearTimeout(this.t);
-                  }
                   this.t = setTimeout(() => {
                     this.scrollTo(sc, sc.scrollTop + 42, 150, () => {
                       this.loading = false;
@@ -112,9 +112,6 @@
                 }
               } else {
                 this.loadingTip = 'bad network';
-                if (this.t) {
-                  clearTimeout(this.t);
-                }
                 this.t = setTimeout(() => {
                   this.scrollTo(sc, sc.scrollTop + 42, 200, () => {
                     this.loading = false;
