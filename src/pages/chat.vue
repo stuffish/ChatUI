@@ -110,7 +110,8 @@ export default {
         this.$router.push({name: 'Overview', query: {id : this.contactId}});
       }
     },
-    onMsgSend() {
+    onMsgSend(done) {
+      done(true);
       setTimeout(() => {
         let msg = {
           direction: 1,

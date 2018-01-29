@@ -85,7 +85,7 @@
         })
       },
       dragStart(e) {
-        clearTimeout(this.t);
+        // clearTimeout(this.t);
       },
       dragEnd(e) {
         let sc = this.$refs.scroller;
@@ -105,7 +105,7 @@
                 } else {
                   this.loadingTip = 'no more';
                   this.t = setTimeout(() => {
-                    this.scrollTo(sc, sc.scrollTop + 42, 150, () => {
+                    this.scrollTo(sc, 50, 150, () => {
                       this.loading = false;
                     });
                   }, 1000);
@@ -113,20 +113,20 @@
               } else {
                 this.loadingTip = 'bad network';
                 this.t = setTimeout(() => {
-                  this.scrollTo(sc, sc.scrollTop + 42, 200, () => {
+                  this.scrollTo(sc, 50, 200, () => {
                     this.loading = false;
                   });
                 }, 1500);
               }
             });
           });
-        } else if(sc.scrollTop > 20 && sc.scrollTop <= 50) {
-          this.scrollTo(sc, 42, 150, () => {
+        } else if(sc.scrollTop > 20 && sc.scrollTop < 50) {
+          this.scrollTo(sc, 50, 150, () => {
             this.loading = false;
           });
         } else {
+          this.loading = false;
           clearTimeout(this.t);
-          this.loading = false
         }
       },
       send() {
@@ -140,9 +140,12 @@
             time: (new Date).getTime()
           };
           this.addChatData(msg);
-          this.$emit('on-msg-send');
+          this.$emit('on-msg-send', (success) => {
+            if (!success) {
+              console.log('msg-send-fail');
+            }
+          });
           this.preSend = '';
-
         }
       },
       scrollTo(el, endHeight, time, callback){
