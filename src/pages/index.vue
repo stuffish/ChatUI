@@ -4,7 +4,7 @@
     </chat-header>
     <chat-group :data="list" @on-cell-click="onCellClick">
     </chat-group>
-    <router-link class="pop" :to="{ path:'/skin' }">
+    <router-link class="pop-bubble" :to="{ path:'/skin' }">
       <i class="iconfont icon-pifu"></i>
     </router-link>
     <div class="mask">
@@ -53,24 +53,7 @@ export default {
   overflow: hidden;
   .chat-group {
     padding-top: 48px;
-  }
-  .pop {
-    display: flex;
-    position: fixed;
-    z-index: 100;
-    width: 42px;
-    height: 42px;
-    bottom: 18px;
-    right: 15px;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    border-radius: 50%;
-    overflow: hidden;
-    box-shadow: 0 0 7px -3px #ddd;
-    .iconfont {
-      font-size: 22px;
-    }
+    height: calc(100vh - 48px);
   }
   .mask {
     position: fixed;
@@ -82,6 +65,25 @@ export default {
     background-image:-webkit-linear-gradient(90deg, rgba(#000, .15) 0%, transparent 100%);
     background-image:-moz-linear-gradient(90deg, rgba(#000, .15) 0%, transparent 100%);
     background-image:-o-linear-gradient(90deg, rgba(#000, .15) 0%, transparent 100%);
+  }
+}
+
+.pop-bubble {
+  display: flex;
+  position: fixed;
+  z-index: 100;
+  width: 42px;
+  height: 42px;
+  bottom: 18px;
+  right: 15px;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 7px -3px #ddd;
+  .iconfont {
+    font-size: 22px;
   }
 }
 </style>

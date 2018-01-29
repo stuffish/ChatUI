@@ -47,7 +47,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .chat-cell {
   display: flex;
   position: relative;

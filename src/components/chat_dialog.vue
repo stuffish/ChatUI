@@ -87,7 +87,6 @@ export default {
 .chat-dialog {
   $colorBorder: #ddd;
   width: 210px;
-  background: #fff;
   border-radius: 5px;
   box-shadow: 0 1px 7px -3px #000;
   box-sizing: border-box;
@@ -103,7 +102,6 @@ export default {
     box-sizing: border-box;
     width: 100%;
     padding: 10px;
-    background: #fff;
     line-height: 20px;
     input {
       width: 100%;

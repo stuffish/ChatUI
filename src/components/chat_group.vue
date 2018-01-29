@@ -63,5 +63,8 @@ export default {
 .chat-group {
   height: 100%;
   overflow-y: scroll;
+  .chat-cell:last-child {
+    border-bottom: 0;
+   }
 }
 </style>

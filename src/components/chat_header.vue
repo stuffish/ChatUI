@@ -44,6 +44,7 @@ export default {
 .chat-header {
   display: table;
   width: 100vw;
+  background-size: 100% 100%;
   color: #fff;
   transition: .3s;
   > * {

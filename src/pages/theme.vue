@@ -28,12 +28,9 @@
 import ChatHeader from '@/components/chat_header.vue';
 import ChatDialog from '@/components/chat_dialog.vue';
 export default {
-  name: "",
   data: () => ({
     dialogShow: false
   }),
-  created() {
-  },
   methods: {
     changeTheme(index) {
       let select = this.themes[index];
@@ -69,6 +66,7 @@ export default {
   }
   .theme-select {
     margin-top: 10px;
+    margin-bottom: 10px;
     .card {
       position: relative;
       width: 95vw;

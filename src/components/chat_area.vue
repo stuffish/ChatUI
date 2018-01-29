@@ -183,105 +183,105 @@
   display: flex;
   flex-flow: column;
   height: 100%;
-  background: #f1f1f1;
   .scroller {
     position: relative;
     flex: 1;
     width: 100%;
     height: 100%;
     overflow: scroll;
-    .content {
-      -webkit-overflow-scrolling: touch;
-      min-height: calc(100% + 50px);
-      .loading{
+  }
+  .content {
+    -webkit-overflow-scrolling: touch;
+    min-height: calc(100% + 50px);
+    .loading{
+      display: block;
+      text-align: center;
+      color: #b0b0b0;
+      line-height: 50px;
+      height: 50px;
+    }
+    .msg-content{
+      padding: 10px 13px;
+      li {
         display: block;
-        text-align: center;
-        color: #b0b0b0;
-        line-height: 50px;
-        height: 50px;
+        position: relative;
+        margin-bottom: 15px;
+        left:0;
       }
-      .msg-content{
-        padding: 10px 13px;
-        li {
-          display: block;
-          position: relative;
-          margin-bottom: 15px;
-          left:0;
+      .animateFade{
+        left: 0;
+        animation: fadeIn .5s ease;
+      }
+      .avatar {
+        float: left;
+        width: 45px;
+        height: 45px;
+        margin: 0 10px 0 0;
+        background-size: cover;
+        border-radius: 50%;
+      }
+      .msg-wrap {
+        display: inline-block;
+        position: relative;
+        box-sizing: border-box;
+        padding: 6px 10px;
+        margin-left: 5px;
+        max-width: calc(100% - 130px);
+        min-height: 28px;
+        min-width: 30px;
+        font-size: 15px;
+        word-wrap: break-word;
+        word-break: normal;
+        background-color: #fff;
+        color: #000;
+        border-radius: 12px;
+        border: 1px solid transparent;
+        box-shadow: 0px 1px 5px -3px #000;
+        &:before {
+          content: "";
+          position: absolute;
+          top: 11px;
+          right: calc(100% - 1px);
+          border: 6px solid transparent;
+          border-right-color: #fff;
+          z-index: 5;
         }
-        .animateFade{
-          left: 0;
-          animation: fadeIn .5s ease;
+        &:after {
+          content: "";
+          position: absolute;
+          top: 11px;
+          right: 100%;
+          border: 6px solid transparent;
+          border-right-color: #fff;
+          z-index: 4;
         }
+        .text {
+          line-height: 2.1;
+        }
+        .image {
+          border-radius: 6px;
+          overflow: hidden;
+          > img {
+            width: 100%;
+          }
+        }
+      }
+      .own {
+        text-align: right;
         .avatar {
-          float: left;
-          width: 45px;
-          height: 45px;
-          margin: 0 10px 0 0;
-          background-size: cover;
-          border-radius: 50%;
+          float: right;
+          margin: 0 0 0 10px;
         }
         .msg-wrap {
-          display: inline-block;
-          position: relative;
-          box-sizing: border-box;
-          padding: 6px 10px;
-          margin-left: 5px;
-          max-width: calc(100% - 130px);
-          min-height: 28px;
-          min-width: 30px;
-          font-size: 15px;
-          word-wrap: break-word;
-          word-break: normal;
-          background-color: #fff;
-          color: #000;
-          border-radius: 12px;
-          box-shadow: 0px 1px 5px -3px #000;
+          text-align: left;
+          margin-right: 5px;
           &:before {
-            content: "";
-            position: absolute;
-            top: 11px;
-            right: calc(100% - 1px);
-            border: 6px solid transparent;
-            border-right-color: #fff;
-            z-index: 5;
+            left: calc(100% - 1px);
+            border-right-color: transparent;
           }
           &:after {
-            content: "";
-            position: absolute;
-            top: 11px;
-            right: 100%;
-            border: 6px solid transparent;
-            border-right-color: #fff;
-            z-index: 4;
-          }
-          .text {
-            line-height: 2.1;
-          }
-          .image {
-            border-radius: 6px;
-            overflow: hidden;
-            > img {
-              width: 100%;
-            }
-          }
-        }
-        .own {
-          text-align: right;
-          .avatar {
-            float: right;
-            margin: 0 0 0 10px;
-          }
-          .msg-wrap {
-            text-align: left;
-            margin-right: 5px;
-            &:before {
-              left: calc(100% - 1px);
-              border-right-color: transparent;
-            }
-            &:after {
-              left: 100%;
-              border-right-color: transparent;
-            }
+            left: 100%;
+            border-right-color: transparent;
           }
         }
       }
@@ -298,6 +298,7 @@
     box-sizing: border-box;
     padding: 0 10px 0 10px;
     background: #eaeaea;
+    border-top: 1px solid transparent;
     input {
       box-sizing: border-box;
       text-indent: 4px;
@@ -309,7 +310,7 @@
       border: 1px solid #ddd;
       float: left;
       margin-right: 2.5%;
-      &:hover {
+      &:focus {
         transition: .3s;
       }
     }
