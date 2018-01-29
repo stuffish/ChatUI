@@ -4,7 +4,7 @@ import PageTransition from '@/pages/page_transition.vue'
 import Index from '@/pages/index.vue'
 import Chat from '@/pages/chat.vue'
 import Overview from '@/pages/overview.vue'
-import Skin from '@/pages/theme.vue'
+import Theme from '@/pages/theme.vue'
 import Pay from '@/pages/pay.vue'
 
 Router.prototype.goBack = function () {
@@ -31,9 +31,9 @@ const router = new Router({
         name: 'Overview',
         component: Overview
       }, {
-        path: '/skin',
-        name: 'Skin',
-        component: Skin
+        path: '/theme',
+        name: 'Theme',
+        component: Theme
       }, {
         path: '/pay',
         name: 'Pay',

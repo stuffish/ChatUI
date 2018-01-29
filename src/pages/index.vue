@@ -4,9 +4,9 @@
     </chat-header>
     <chat-group :data="list" @on-cell-click="onCellClick">
     </chat-group>
-    <router-link class="pop-bubble" :to="{ path:'/skin' }">
-      <i class="iconfont icon-pifu"></i>
-    </router-link>
+    <chat-pop-bubble @click="onPopClick">
+      <i slot="icon" class="iconfont icon-pifu"></i>
+    </chat-pop-bubble>
     <div class="mask">
     </div>
   </div>
@@ -15,6 +15,7 @@
 <script>
 import ChatGroup from '@/components/chat_group.vue'
 import ChatHeader from '@/components/chat_header.vue'
+import ChatPopBubble from '@/components/chat_pop_bubble.vue'
 import avatarURL from '@/assets/avatar.jpg'
 import 'vue-resource'
 export default {
@@ -39,11 +40,15 @@ export default {
   methods: {
     onCellClick(index, item) {
       this.$router.push({path:'/chat', query:{id:item.contacts_id, displayName: item.displayName}});
+    },
+    onPopClick() {
+      this.$router.push({path:'/theme'});
     }
   },
   components: {
     ChatHeader,
-    ChatGroup
+    ChatGroup,
+    ChatPopBubble
   }
 }
 </script>
@@ -65,25 +70,6 @@ export default {
     background-image:-webkit-linear-gradient(90deg, rgba(#000, .15) 0%, transparent 100%);
     background-image:-moz-linear-gradient(90deg, rgba(#000, .15) 0%, transparent 100%);
     background-image:-o-linear-gradient(90deg, rgba(#000, .15) 0%, transparent 100%);
-  }
-}
-
-.pop-bubble {
-  display: flex;
-  position: fixed;
-  z-index: 100;
-  width: 42px;
-  height: 42px;
-  bottom: 18px;
-  right: 15px;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 0 7px -3px #ddd;
-  .iconfont {
-    font-size: 22px;
   }
 }
 </style>

@@ -25,7 +25,8 @@ npm run dev
 │   │   ├── chat_cell.vue        // a cell include contact simple data
 │   │   ├── chat_dialog.vue      // pop dialog
 │   │   ├── chat_group.vue       // chat-cell group
-│   │   └── chat_header.vue      // top header
+│   │   ├── chat_header.vue      // top header
+│   │   └── chat_pop_bubble.vue  // small bubble clickable
 │   ├── pages 
 │   │   ├── chat.vue             // chat-each-other view
 │   │   ├── index.vue            // contact list
