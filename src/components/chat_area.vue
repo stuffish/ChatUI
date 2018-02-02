@@ -34,7 +34,7 @@
     props: {
       height: {
         type: Number,
-        default: 300
+        default: 300,
       },
       contactAvatar: {
         type: String
@@ -54,7 +54,7 @@
         preSend: '',
         sendDisable: true,
         t: '',
-        t1: ''
+        t1: '',
       }
     },
     created() {
@@ -65,7 +65,7 @@
       let sc = this.$refs.scroller;
       this.$nextTick(() => {
         sc.scrollTop = sc.scrollHeight - sc.clientHeight;
-      })
+      });
     },
     watch: {
       preSend(newVal, oldVal) {
@@ -82,7 +82,7 @@
         this.$nextTick(() => {
           let sc = this.$refs.scroller;
           this.scrollTo(sc, sc.scrollHeight - sc.clientHeight, 180, ()=>{});
-        })
+        });
       },
       dragStart(e) {
         // clearTimeout(this.t);
@@ -353,10 +353,10 @@
 }
   @keyframes fadeIn{
     0%{
-      opacity: 0
+      opacity: 0;
     };
     100%{
-      opacity: 1
-    }
+      opacity: 1;
+    };
   }
 </style>
