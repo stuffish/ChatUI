@@ -1,16 +1,9 @@
 # ChatUI
 
-![image](https://github.com/stuffish/ChatUI/blob/master/preview/preview.gif)
+# Install
 
-# Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
+``` 
+npm install vue-chat-ui --save
 ```
 
 # Code Organization
