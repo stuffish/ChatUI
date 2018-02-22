@@ -31,6 +31,7 @@
     position: absolute;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
     transition: .5s;
   }
   .slide-left-enter, .slide-right-leave-active {

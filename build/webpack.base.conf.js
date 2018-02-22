@@ -1,16 +1,63 @@
 'use strict'
 const path = require('path')
+const glob = require('globby') 
 const utils = require('./utils')
+const merge = require('webpack-merge')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
+const CSS_PATH = {
+  css: {
+    pattern: ['../src/styles/**/[^_]*.scss', '../src/styles/**/*.scss', '../src/styles/*.scss'],
+    // dst: path.resolve(__dirname, 'static/build/webpack'),
+    dst: config.build.assetsLib,
+  }
+}
 
+function getCSSEntries(config) {
+  let fileList = glob.sync(config.pattern)
+  return fileList.reduce(function (previous, current) {
+    let filePath = path.parse(path.relative(config.src, current))
+    let withoutSuffix = path.join(filePath.dir, filePath.name)
+    previous[withoutSuffix] = path.resolve(__dirname, current)
+    return previous
+  }, {})
+}
+const wpconfig = {
+  devtool: 'cheap-module-eval-source-map',
+  context: path.resolve(__dirname, '../'),
+  entry: getCSSEntries(CSS_PATH.css),
+  output: {
+    path: CSS_PATH.css.dst,
+    filename: 'style.css',
+    publicPath: process.env.NODE_ENV === 'production'
+      ? config.build.assetsPublicPath
+      : config.dev.assetsPublicPath
+  },
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          use: ['style-loader', 'css-loader', 'sass-loader']
+        })
+      }
+    ]
+  },
+  resolve: {
+    extensions: ['.scss']
+  },
+  plugins: [
+    new ExtractTextPlugin('/lib/style.css'),
+  ]
+}
 
-module.exports = {
+module.exports = merge(wpconfig, {
   context: path.resolve(__dirname, '../'),
   entry: {
     app: './src/main.js'
@@ -64,7 +111,8 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
-      }
+      },
+      
     ]
   },
   node: {
@@ -79,4 +127,4 @@ module.exports = {
     tls: 'empty',
     child_process: 'empty'
   }
-}
+})

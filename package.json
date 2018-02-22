@@ -1,7 +1,7 @@
 {
   "name": "chat_ui",
   "main": "index.js",
-  "description": "A Vue.js project",
+  "description": "a simple chat ui in mobile with vue",
   "version": "0.1.0",
   "author": "stuffish",
   "engines" : {
@@ -11,7 +11,8 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "build-style": "node build/build-style.js"
   },
   "dependencies": {
     "css-loader": "^0.28.7",
@@ -50,6 +51,7 @@
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.8",
     "rimraf": "^2.6.0",
+    "sass-map": "^0.3.4",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
     "uglifyjs-webpack-plugin": "^1.1.1",

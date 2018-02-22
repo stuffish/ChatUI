@@ -5,7 +5,7 @@
         {{loadingTip}}
       </div>
       <ul class="msg-content">
-        <li v-for="(msg, index) in chatData" :class="{'own':msg.direction == 0, 'animateFade':msg.animate}">
+        <li v-for="msg in chatData" :class="{'own':msg.direction == 0, 'animateFade':msg.animate}" :key="msg.time">
             <div class="avatar" :style="{backgroundImage:'url('+ (msg.direction? contactAvatar: ownerAvatar) +')'}" @click='avatarClick(msg.direction)'></div>
             <div class="msg-wrap">
               <div v-if="msg.type=='text'" class="text">

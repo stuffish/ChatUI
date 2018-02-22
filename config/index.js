@@ -40,12 +40,12 @@ module.exports = {
     // just be aware of this issue when enabling this option.
     cssSourceMap: false,
   },
-
   build: {
     // Template for index.html
     index: path.resolve(__dirname, '../dist/index.html'),
 
     // Paths
+    assetsLib: path.resolve(__dirname, '../lib'),
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',

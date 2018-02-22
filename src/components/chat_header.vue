@@ -22,7 +22,7 @@ export default {
     },
     height: {
       type: Number,
-      default: 48
+      default: 50
     },
     back: {
       type: Boolean,
@@ -30,10 +30,6 @@ export default {
     },
     title: {
       type: String
-    },
-    bgColor: {
-      type: String,
-      default: '#fff'
     }
   },
   methods: {
@@ -47,6 +43,7 @@ export default {
 .chat-header {
   display: table;
   width: 100vw;
+  background-size: 100% 100%;
   color: #fff;
   transition: .3s;
   > * {

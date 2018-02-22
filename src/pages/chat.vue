@@ -1,34 +1,26 @@
 <template>
-  <div class="chat-view">
+  <div class="page-chat">
     <chat-header :title="displayName">
     </chat-header>
-    <div class="main-container">
-      <div class="chat-area">
-        <chat-container
-        v-if="asyncFlag"
-        :oriData="chatData"
-        :ownerAvatar="ownerAvatar"
-        :contactAvatar="contactAvatar"
-        :height="containerHeight"
-        @on-avatar-click="onAvatarClick"
-        @load-more="loadMore"
-        >
-      </chat-container>
-    </div>
-    <div class="pre-bottom">
-      <input type="text" name="" value="" v-model="preSend">
-      <button :class="{disable:sendDisable}" type="button" name="send" @click="send()" @keyup.enter="send()">
-        <i class="iconfont icon-send"></i>
-      </button>
-    </div>
+      <chat-area
+      v-if="asyncFlag"
+      :height="mHeight"
+      :oriData="chatData"
+      :ownerAvatar="ownerAvatar"
+      :contactAvatar="contactAvatar"
+      @on-avatar-click="onAvatarClick"
+      @load-more="loadMore"
+      @on-msg-send="onMsgSend"
+      >
+    </chat-area>
+    <div v-else class="loading-view"></div>
   </div>
-</div>
 </template>
 
 <script>
 import Vue from 'vue'
 import ChatHeader from '@/components/chat_header.vue'
-import ChatContainer from '@/components/chat_container.vue'
+import ChatArea from '@/components/chat_area.vue'
 import 'vue-resource'
 export default {
   name: 'chat',
@@ -36,8 +28,6 @@ export default {
     return {
       contactId: '',
       displayName: '',
-      preSend: '',
-      sendDisable: true,
       ownerAvatar: '',
       contactAvatar: '',
       chatData: [],
@@ -68,18 +58,9 @@ export default {
       }
     })
   },
-  watch: {
-    preSend(newVal, oldVal) {
-      if (newVal != '') {
-        this.sendDisable = false;
-      } else {
-        this.sendDisable = true;
-      }
-    }
-  },
   computed: {
-    containerHeight() {
-      return 1;
+    mHeight() {
+      return (window.innerHeight||document.documentElement.clientHeight) - 48;
     }
   },
   methods:{
@@ -120,115 +101,42 @@ export default {
       }
       self.isLaoding = false;
     },
-    send() {
-      let msg;
-      if (this.preSend != '') {
-        msg = {
-          direction: 0,
-          type: 'text',
-          animate: true,
-          content: this.preSend,
-          time: (new Date).getTime()
-        };
-        this.$bus.emit('new-chat-data', msg);
-        this.preSend = '';
-        setTimeout(() => {
-          msg = {
-            direction: 1,
-            type: 'text',
-            animate: true,
-            content: '[Auto Reply]',
-            time: (new Date).getTime()
-          };
-          this.$bus.emit('new-chat-data', msg);
-        }, 800);
-      }
-    },
     goback () {
       this.$router.goBack()
     },
-    onAvatarClick() {
-      this.$router.push({name: 'Overview', query: {id : this.contactId}});
+    onAvatarClick(direction) {
+      if (direction == 1) {
+        this.$router.push({name: 'Overview', query: {id : this.contactId}});
+      }
+    },
+    onMsgSend(done) {
+      done(true);
+      setTimeout(() => {
+        let msg = {
+          direction: 1,
+          type: 'text',
+          animate: true,
+          content: '[Auto Reply]',
+          time: (new Date).getTime()
+        };
+        this.$bus.emit('new-chat-data', msg);
+      }, 800);
     }
   },
   components: {
     ChatHeader,
-    ChatContainer
+    ChatArea
   }
 }
 </script>
 <style lang="scss">
-.chat-view {
+.page-chat {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  .main-container {
-    display: flex;
+  .loading-view {
+    width: 100vw;
     height: calc(100vh - 48px);
-    flex-flow: column;
-    .chat-area {
-      display: flex;
-      height: 100%;
-      flex-grow: 1;
-      overflow: hidden;
-      background-color: #dedede;
-    }
-    .pre-bottom {
-      display: flex;
-      align-items: center;
-      height: 50px;
-      box-sizing: border-box;
-      padding: 0 10px 0 10px;
-      background: #eaeaea;
-      input {
-        box-sizing: border-box;
-        text-indent: 4px;
-        width: 80%;
-        height: 30px;
-        padding: 4px 2px 4px 2px;
-        border-radius: 6px;
-        font-size: 16px;
-        border: 1px solid #ddd;
-        float: left;
-        margin-right: 2.5%;
-        &:hover {
-          transition: .3s;
-        }
-      }
-      button {
-        position: relative;
-        width: 17.5%;
-        height: 30px;
-        border-radius: 6px;
-        line-height: 22px;
-        border: 0;
-        i {
-          font-size: 27px;
-          color: #fff;
-        }
-        &:active:after {
-          opacity: 1;
-        }
-        &.disable {
-          background: #c8c8c8;
-          &:active:after {
-            opacity: 0;
-          }
-        }
-      }
-      button:after {
-        position: absolute;
-        content:'';
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(#000, .2);
-        opacity: 0;
-        transition: .3s;
-      }
-    }
-
   }
 }
 </style>

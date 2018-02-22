@@ -1,6 +1,6 @@
 <template>
   <div class="chat-cell" @click="click">
-    <div class="avatar" :style="{backgroundImage:'url('+avatar+')'}">
+    <div class="avatar" :style="{backgroundImage:'url('+avatar+')'}" :class="{circle: circleAvatar}">
     </div>
     <div class="content">
       <div class="nickname">
@@ -32,14 +32,9 @@ export default {
     time: {
       type: String
     },
-    link: {
-      type: String
-    },
-    routerName: {
-      type: String
-    },
-    routerParams: {
-      type: Object
+    circleAvatar: {
+      type: Boolean,
+      default: false
     }
   },
   data: () => ({
@@ -52,7 +47,7 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .chat-cell {
   display: flex;
   position: relative;
@@ -91,6 +86,9 @@ export default {
     width: 96%;
     height: 1px;
     background: #ddd;
+  }
+  .circle {
+    border-radius: 50%;
   }
   + .chat-cell {
   }

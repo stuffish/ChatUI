@@ -25,4 +25,8 @@ export default {
 @import "styles/base/reset.scss";
 @import "styles/base/animate.scss";
 @import "'//at.alicdn.com/t/font_463713_020jnoxnk4kj4i.css'";
+#app {
+  width: 100vw;
+  height: 100vh;
+}
 </style>
