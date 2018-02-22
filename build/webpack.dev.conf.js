@@ -13,8 +13,8 @@ const PORT = process.env.PORT && Number(process.env.PORT)
 
 const express = require('express');
 const app = express();
-let appData = require('../data.json');
-let apiRoutes = express.Router();
+var appData = require('../data.json');
+var apiRoutes = express.Router();
 app.use('/api', apiRoutes);
 
 const devWebpackConfig = merge(baseWebpackConfig, {
@@ -170,8 +170,9 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       'process.env': require('../config/dev.env')
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
+    new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
     new webpack.NoEmitOnErrorsPlugin(),
+    // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',

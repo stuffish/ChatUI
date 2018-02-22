@@ -1,9 +1,13 @@
 {
   "name": "chat_ui",
+  "main": "index.js",
   "description": "A Vue.js project",
-  "version": "1.0.0",
-  "author": "",
-  "private": true,
+  "version": "0.1.0",
+  "author": "stuffish",
+  "engines" : {
+    "node": ">=3.0.0",
+    "npm": ">=5.3.0"
+  }, 
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
@@ -57,5 +61,17 @@
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.1",
     "webpack-merge": "^4.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stuffish/ChatUI.git"
+  },
+  "keywords": [
+    "stuffish"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stuffish/ChatUI/issues"
+  },
+  "homepage": "https://github.com/stuffish/ChatUI#readme"
 }

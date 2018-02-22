@@ -9,6 +9,7 @@
         :oriData="chatData"
         :ownerAvatar="ownerAvatar"
         :contactAvatar="contactAvatar"
+        :height="containerHeight"
         @on-avatar-click="onAvatarClick"
         @load-more="loadMore"
         >
@@ -49,7 +50,7 @@ export default {
   mounted() {
     this.contactId = this.$route.query.id;
     this.displayName = this.$route.query.displayName;
-    this.$http.get(`/api/chat_data/${this.contactId}`).then((response) => {
+    this.$http.get(`/api/chat_data/${this.contactId}`).then(response => {
       let res = response.data;
       if (res.errno == 0) {
         for (let v of res.data.chatData) {
@@ -74,6 +75,11 @@ export default {
       } else {
         this.sendDisable = true;
       }
+    }
+  },
+  computed: {
+    containerHeight() {
+      return 1;
     }
   },
   methods:{

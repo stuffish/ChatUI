@@ -9,7 +9,6 @@
       {{title}}
     </div>
     <div class="option">
-
     </div>
   </div>
 </template>

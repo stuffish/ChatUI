@@ -4,20 +4,19 @@
       <div class="loading">
         {{loadingTip}}
       </div>
-        <ul class="msg-content">
-          <li v-for="(msg, index) in chatData" :class="{'own':msg.direction == 0, 'animateFade':msg.animate}">
-              <div class="avatar" :style="{backgroundImage:'url('+ (msg.direction? contactAvatar: ownerAvatar) +')'}" @click='avatarClick(msg.direction)'></div>
-              <div class="msg-wrap">
-                <div v-if="msg.type=='text'" class="text">
-                  {{msg.content}}
-                </div>
-                <div v-else-if="msg.type=='picture'" class="image">
-                  <img :src="msg.content">
-                </div>
+      <ul class="msg-content">
+        <li v-for="(msg, index) in chatData" :class="{'own':msg.direction == 0, 'animateFade':msg.animate}">
+            <div class="avatar" :style="{backgroundImage:'url('+ (msg.direction? contactAvatar: ownerAvatar) +')'}" @click='avatarClick(msg.direction)'></div>
+            <div class="msg-wrap">
+              <div v-if="msg.type=='text'" class="text">
+                {{msg.content}}
               </div>
-          </li>
-        </ul>
-
+              <div v-else-if="msg.type=='picture'" class="image">
+                <img :src="msg.content">
+              </div>
+            </div>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -47,7 +46,6 @@ export default {
     this.$bus.on('new-chat-data', this.addChatData);
   },
   mounted() {
-    let self = this;
     let cc = document.getElementsByClassName('chat-containter')[0];
     this.$nextTick(() => {
       cc.scrollTop = cc.scrollHeight - cc.clientHeight;
@@ -55,11 +53,10 @@ export default {
   },
   methods: {
     addChatData(val) {
-      let self = this;
       this.chatData.push(val);
       this.$nextTick(() => {
         let cc = document.getElementsByClassName('chat-containter')[0];
-        self.scrollTo(cc, cc.scrollHeight - cc.clientHeight, 180, ()=>{});
+        this.scrollTo(cc, cc.scrollHeight - cc.clientHeight, 180, ()=>{});
       })
     },
     dragEnd(e) {

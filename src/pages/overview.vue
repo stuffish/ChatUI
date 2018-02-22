@@ -8,16 +8,7 @@
         <div class="option" @click="displayMenus">
           <i class="iconfont icon-gengduo"></i>
         </div>
-        <transition name="fade">
-          <ul v-show="menuShow" class="menus">
-            <li @click="editAlias">
-              Edit alias
-            </li>
-            <li>
-              More...
-            </li>
-          </ul>
-        </transition>
+        <chat-menu :show="menuShow" :menus="menus" @on-menu-click="onMenuClick"></chat-menu>
       </div>
         <div class="avatar" :style="{backgroundImage:'url(' + info.avatarImg + ')'}">
         </div>
@@ -30,45 +21,15 @@
           </span>
         </div>
     </div>
-    <table>
-      <tr v-if="info.accountId">
-        <td>Account</td>
-        <td>{{info.accountId}}</td>
-      </tr>
-      <tr v-if="info.alias&&info.nickname">
-        <td>Nickname</td>
-        <td>{{info.nickname}}</td>
-      </tr>
-      <tr v-if="info.gender">
-        <td>Gender</td>
-        <td>{{info.gender}}</td>
-      </tr>
-      <tr v-if="info.age">
-        <td>Age</td>
-        <td>{{info.age}}</td>
-      </tr>
-
-    </table>
-    <table>
-      <tr v-if="info.region">
-        <td>Region</td>
-        <td>{{info.region}}</td>
-      </tr>
-      <tr v-if="info.tel">
-        <td>Tel</td>
-        <td>{{info.tel}}</td>
-      </tr>
-    </table>
-    <table>
-      <tr v-if="info.tag">
-        <td>Tag</td>
-        <td>{{info.tag}}</td>
-      </tr>
-    </table>
+    <chat-table :column="tableColumn1" :value="tableValue1"></chat-table>
+    <chat-table :column="tableColumn2" :value="tableValue2"></chat-table>
+    <chat-table :column="tableColumn3" :value="tableValue3"></chat-table>
     <chat-dialog :show.sync="dialogShow" title="Input the new alias" :type="1" :content="info.alias" @positiveBtnClick="dialogPositive"></chat-dialog>
   </div>
 </template>
 <script>
+import ChatMenu from '@/components/chat_menu.vue';
+import ChatTable from '@/components/chat_table.vue';
 import ChatDialog from '@/components/chat_dialog.vue';
 import default_bg from '@/assets/bg0.jpg';
 import pink_bg from '@/assets/bg1.jpg';
@@ -81,7 +42,14 @@ export default {
       contactId: '',
       menuShow: false,
       dialogShow: false,
-      info: {}
+      info: {},
+      menus: ['Edit alias', 'More...'],
+      tableColumn1: ['Account', 'Nickname', 'Gender', 'Age'],
+      tableValue1: [],
+      tableColumn2: ['Region', 'Tel'],
+      tableValue2: [],
+      tableColumn3: ['Tag'],
+      tableValue3: [],
     }
   },
   mounted() {
@@ -90,10 +58,22 @@ export default {
       let res = response.data;
       if (res.errno == 0) {
         this.info = res.data;
+        this.tableValue1.push(this.info.accountId);
+        this.tableValue1.push(this.info.nickname);
+        this.tableValue1.push(this.info.gender);
+        this.tableValue1.push(this.info.age);
+        this.tableValue2.push(this.info.region);
+        this.tableValue2.push(this.info.tel);
+        this.tableValue3.push(this.info.tag);
       }
     })
   },
   methods: {
+    onMenuClick(index, val) {
+      if (index == 0) {
+        this.editAlias();
+      }
+    },
     goBack() {
       this.$router.goBack();
     },
@@ -113,7 +93,9 @@ export default {
     }
   },
   components: {
-    ChatDialog
+    ChatDialog,
+    ChatMenu,
+    ChatTable
   }
 }
 </script>
@@ -162,28 +144,7 @@ export default {
       .display-name {
         font-size: 24px;
       }
-      .menus {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 150px;
-        line-height: 45px;
-        text-align: center;
-        color: #404040;
-        box-shadow: 0 0 4px 0 #555;
-        background: #fff;
-        li {
-          display: block;
-          width: 100%;
-          height: 45px;
-          &:active {
-            background: #eee;
-          }
-          + li {
-            border-top: 1px solid #e8e8e8;
-          }
-        }
-      }
+
     }
     .avatar {
       height: 120px;
@@ -198,32 +159,6 @@ export default {
     .avatar + div {
       text-align: center;
       margin-top: 17px;
-    }
-  }
-  table {
-    width: 100%;
-    color: #555;
-    background: #fff;
-    tr {
-      height: 44px;
-      text-indent: 1.5em;
-      td {
-        vertical-align: middle;
-      }
-      td:nth-child(2n+1) {
-        font-size: 14px;
-        opacity: .8;
-        width: 100px;
-      }
-    }
-    tr:nth-child(n+2) {
-      border-top: 1px solid #e8e8e8;
-    }
-    tr:active {
-      background: #eee;
-    }
-    + table {
-      margin-top: 20px;
     }
   }
 }
